@@ -16,7 +16,7 @@ const app = express();
 app.use(express.json());
 app.use(limiter);
 
-PORT = 8080;
+PORT = process.env,PORT || 8080;
 
 // Submit a new thing to be voted on
 app.post('/submit', (req, res) => {
@@ -164,5 +164,5 @@ app.get('/status/:thing', (req, res) => {
 
 app.listen(
     PORT,
-    () => console.log(`Let the fish voting begin, at http://localhost${PORT}`)
+    () => console.log(`Let the fish voting begin, on port ${PORT}`)
 );
