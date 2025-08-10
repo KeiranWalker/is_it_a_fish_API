@@ -16,7 +16,7 @@ const app = express();
 app.use(express.json());
 app.use(limiter);
 
-PORT = process.env,PORT || 8080;
+PORT = process.env.PORT || 8080;
 
 // Submit a new thing to be voted on
 app.post('/submit', (req, res) => {
